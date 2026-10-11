@@ -1,0 +1,94 @@
+# Bookish repertoire presets.
+#
+# Edit these directly in any text editor -- changes take effect the next
+# time you launch Bookish, or immediately if you click "Reload Presets"
+# in the Repertoire Builder tab. If this file has a syntax error or a
+# preset is missing a field, Bookish falls back to its built-in defaults
+# and tells you what went wrong rather than crashing -- fix the file and
+# reload/relaunch to pick your edits back up.
+#
+# Fields for each preset:
+#   depth                    Hard ceiling on how many of your own moves
+#                            a line can contain, no matter what.
+#   rarity_cutoff            The "X" in "1 in X games" -- a branch gets
+#                            excluded once it's rarer than this. Set to
+#                            0 or null to disable Rarity Cutoff for this
+#                            preset (falls back to pure Depth-based
+#                            building).
+#   ignore_threshold_pct     Opponent replies below this share of the
+#                            position's games are dropped by default.
+#   requirement_pct          If what clears ignore_threshold_pct doesn't
+#                            add up to this much cumulative coverage,
+#                            smaller replies get added back in until it
+#                            does.
+#   opponent_move_range      Hard cap on how many branches the tree can
+#                            split into at any one opponent turn.
+#   user_move_range          How many of your own top candidate moves
+#                            (by popularity) get considered before
+#                            picking the best-scoring one.
+#   user_minimum_games       A candidate move of yours needs at least
+#                            this many games in the database to be
+#                            eligible at all.
+#   opponent_minimum_games   Same idea, for the opponent's replies.
+#   description              Shown in the Preset dropdown's tooltip.
+#
+# Presets are applied in the order they appear here. "Custom" is always
+# added automatically after whatever's listed below -- don't add your
+# own entry named Custom.
+
+Casual:
+  depth: 5
+  rarity_cutoff: 50
+  ignore_threshold_pct: 10
+  requirement_pct: 70
+  opponent_move_range: 3
+  user_move_range: 1
+  user_minimum_games: 300
+  opponent_minimum_games: 300
+  description: A repertoire guide that covers only the most important lines.
+
+Club:
+  depth: 10
+  rarity_cutoff: 100
+  ignore_threshold_pct: 10
+  requirement_pct: 80
+  opponent_move_range: 3
+  user_move_range: 2
+  user_minimum_games: 250
+  opponent_minimum_games: 250
+  description: Covers all of the mainlines and some important sidelines.
+
+Tournament:
+  depth: 15
+  rarity_cutoff: 200
+  ignore_threshold_pct: 5
+  requirement_pct: 90
+  opponent_move_range: 5
+  user_move_range: 3
+  user_minimum_games: 200
+  opponent_minimum_games: 200
+  description: Serious tournament preparation looking to reach 2000 USCF/FIDE; covers
+    all the mainlines and most sidelines.
+
+Ambitious:
+  depth: 20
+  rarity_cutoff: 400
+  ignore_threshold_pct: 5
+  requirement_pct: 90
+  opponent_move_range: 5
+  user_move_range: 5
+  user_minimum_games: 150
+  opponent_minimum_games: 150
+  description: For 1800-2000 FIDE/USCF players working toward National Master or FIDE
+    Master.
+
+Master:
+  depth: 25
+  rarity_cutoff: 800
+  ignore_threshold_pct: 5
+  requirement_pct: 90
+  opponent_move_range: 5
+  user_move_range: 5
+  user_minimum_games: 100
+  opponent_minimum_games: 100
+  description: For FIDE Masters aiming at International Master, or IMs aiming at Grandmaster.
